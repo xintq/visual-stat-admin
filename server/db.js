@@ -3,7 +3,7 @@ const path = require('path');
 
 const sqlite3 = require('sqlite3').verbose();
 
-const INIT_SQL_PATH = process.env.INIT_SQL_PATH || path.join(__dirname, '..', 'db-init.sql');
+const INIT_SQL_PATH = process.env.INIT_SQL_PATH || path.join(__dirname, '..', 'sql', 'db-init.sql');
 const DB_NAME = process.env.DB_NAME || path.join(__dirname, '..', 'sqlite3.db');
 
 const db = new sqlite3.Database(DB_NAME, err=>{

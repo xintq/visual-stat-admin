@@ -1,5 +1,5 @@
 const Router = require('koa-router');
-const Article = require('../model/Article');
+const Article = require('./model/Article');
 
 const router = Router({
     prefix: '/api/articles'

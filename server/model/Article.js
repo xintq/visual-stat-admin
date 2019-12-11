@@ -1,4 +1,4 @@
-const { db } = require('../server/db');
+const { db } = require('../db');
 const TABLE_NAME = 'articles';
 
 class Article {

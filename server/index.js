@@ -1,5 +1,7 @@
 const Koa = require('koa');
 const cors = require('@koa/cors');
+const serve = require('koa-static');
+const path = require('path');
 
 const app = new Koa();
 
@@ -33,10 +35,14 @@ app.use(require('koa-body')({
 app.use(encodeDecode());
 app.use(articles.routes());
 
+// 将webpack打包好的项目目录作为Koa静态文件服务的目录
+app.use(serve(path.resolve('dist')));
+
 // response
 app.use(async ctx=>{
-    ctx.body = 'Helllo World';
+    ctx.body = 'Hi, you are accessing the API server.';
 });
+
 
 app.listen(3000);
 console.log('running on http://localhost:3000');
